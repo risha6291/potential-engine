@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Cineflix | Universe Pro 2026</title>
+
+    <!-- Telegram WebApp SDK -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Cinzel:wght@400;500;600;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Custom Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              gold: '#FFD700',
+              card: '#0a0a0a',
+              glass: 'rgba(255, 255, 255, 0.05)',
+            },
+            fontFamily: {
+              sans: ['Manrope', 'sans-serif'],
+              serif: ['Cinzel', 'serif'],
+              brand: ['Bebas Neue', 'sans-serif'],
+            },
+            animation: {
+              'spin-slow': 'spin 3s linear infinite',
+              'pulse-gold': 'pulseGold 2s infinite',
+            },
+            keyframes: {
+              pulseGold: {
+                '0%, 100%': { opacity: 1 },
+                '50%': { opacity: .5, color: '#FFD700' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      * {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #000;
+        color: #fff;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      .mask-image-gradient {
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+      }
+      /* Prevent flash of white */
+      #root { min-height: 100vh; background: #000; }
+      
+      /* Smooth scrolling for all elements */
+      * {
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
